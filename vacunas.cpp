@@ -2,18 +2,18 @@
 
 using namespace std;
 
-int main(){
+int main() {
+    float babyWeight, babyMonths, doseVaccine;
 
-    float pesobebe, mesesbebe, dosisvacuna;
+    cout << "Enter the baby's weight in Kg: ";
+    cin >> babyWeight;
+    
+    cout << "Enter the baby's age in months: ";
+    cin >> babyMonths;
 
-    cout<<"Ingrese el peso del bebé en Kg: "<<endl;
-    cin>>pesobebe;
-    cout<<"Ingrese la edad en meses del bebe: "<<endl;
-    cin>>mesesbebe;
+    doseVaccine = (babyWeight + 10) / (babyMonths * 10) * 8;
 
-    dosisvacuna = ((pesobebe+10)/(mesesbebe*10))*8;
+    cout << "The baby's vaccine dose is: " << doseVaccine;
 
-    cout<<"La dosis del bebe es de: "<<dosisvacuna;
     return 0;
 }
-
