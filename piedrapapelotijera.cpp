@@ -4,30 +4,24 @@
 using namespace std;
 
 int main() {
-  
-  vector<string> opciones = {"Piedra", "Papel", "Tijera"};
+    vector<string> opciones = {"Rock", "Paper", "Scissors"};
 
- 
-  int eleccion;
-  cout << "Elige tu opción (0: Piedra, 1: Papel, 2: Tijera): ";
-  cin >> eleccion;
+    int eleccion;
+    cout << "Choose an option (0: Rock, 1: Paper, 2: Scissors): ";
+    cin >> eleccion;
 
-  int maquinaEleccion = (eleccion + 1) % 3;
+    int maquinaEleccion = (eleccion + 1) % 3;
 
-  
-  cout << "Yo: " << opciones[eleccion] << endl;
-  cout << "Máquina: " << opciones[maquinaEleccion] << endl;
+    cout << "I: " << opciones[eleccion] << endl;
+    cout << "Machine: " << opciones[maquinaEleccion] << endl;
 
- 
-  if (eleccion == maquinaEleccion) {
-    cout << "Empate!" << endl;
-  } else if ((eleccion == 0 && maquinaEleccion == 2) ||
-               (eleccion == 1 && maquinaEleccion == 0) ||
-               (eleccion == 2 && maquinaEleccion == 1)) {
-      cout << "Ganaste!" << endl;
+    if (eleccion == maquinaEleccion) {
+        cout << "Tie!" << endl;
+    } else if ((eleccion + 1) % 3 == maquinaEleccion) {
+        cout << "You win!" << endl;
     } else {
-      cout << "Perdiste!" << endl;
+        cout << "You lose!" << endl;
     }
 
-  return 0;
+    return 0;
 }
