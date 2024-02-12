@@ -6,12 +6,11 @@ int main(){
 
     float temp, res;
 
-    cout<<"Ingrese la temperatura Fahrenheit en números: ";
+    cout<<"Give me the temperature of Fahrenheit just in numbers: ";
     cin>>temp;
 
-    res = (temp-32) /1.8;
-
-    cout<<"Su temperatura en Centigrados es: "<<res<<endl;
+    res = (temp-32) / 1.8;
+    cout<<"The temperature in Centigrados is: " <<res<<endl;
 
     return 0;
 }
