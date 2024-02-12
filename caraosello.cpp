@@ -1,30 +1,31 @@
 #include <iostream>
+#include <random>
+#include <ctime>
 
 using namespace std;
 
-int main(){
+int main() {
+    default_random_engine generator(time(0));
+    uniform_int_distribution<int> distribution(1, 2);
 
-    int eleccion, rnd;
+    int eleccion;
     char res;
 
-    cout<<"Elije una: [1] Cara [2] Sello"<<endl;
-    cin>>eleccion;
-    
+    cout << "Choose one: [1] Cara [2] Sello" << endl;
+    cin >> eleccion;
+
     if (eleccion < 1 || eleccion > 2) {
-      cout << "Elección no válida. Intente de nuevo." <<endl;
-    
-	return 0;
+        cout << "Error, try again." << endl;
+        return 0;
     }
-	
-	rnd = rand() % 2;
-	
-	if (eleccion == 1) {
-      res = rnd ? 'S' : 'C';
+
+    if (distribution(generator) == 1) {
+        res = (eleccion == 1) ? 'S' : 'C';
     } else {
-      res = rnd ? 'C' : 'S';
+        res = (eleccion == 1) ? 'C' : 'S';
     }
-    
-    cout << "Le tocó: " <<res<<endl;
+
+    cout << "It is: " << res << endl;
 
     return 0;
 }
